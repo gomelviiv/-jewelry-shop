@@ -1,0 +1,34 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "scripts": {    
+    "webpack:dev": "npx webpack --config webpack.config.js"
+  },
+  "proxy": "http://localhost:3000",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.3",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "source-map-loader": "^2.0.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.18",
+    "typescript": "^4.2.3",
+    "webpack": "^5.26.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
