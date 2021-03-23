@@ -1,0 +1,82 @@
+.header {
+  position: absolute;
+  width: 100%;
+  max-width: 1450px;
+  left: 50%;
+  margin-left: -725px;
+  top: 25px;
+  height: 52px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  @include typeText($main-color, $main-font);
+  .header-nav {
+    .header-menu {
+      @include typeFlex(row, center, space-between);
+      &__item {
+        text-align: center;
+        width: 12%;
+        & img {
+          width: 30px;
+          height: auto;
+        }
+      }
+      &__item-logo {
+        margin: 0 106px;
+        width: 15%;
+        box-sizing: border-box;
+        & img {
+          width: 230px;
+          height: 60px;
+        }
+      }
+      &__item-logo::before {
+        content: url(./assets/img/icons/stone-icon.png);
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 18px;
+        left: 42.4%;
+      }
+      &__item-logo::after {
+        content: url(./assets/img/icons/stone-icon.png);
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 18px;
+        left: 53.55%;
+      }
+
+      &__item-search {
+        width: 17%;
+        & a {
+          @include typeFlex;
+        }
+        & img {
+          width: 16px;
+          height: auto;
+          margin-right: 20px;
+        }
+        & input {
+          border: none;
+          width: 190px;
+          height: 30px;
+          border-radius: 7px;
+          padding: 0 0 0 10px;
+        }
+      }
+      &__item-icons {
+        & a {
+          @include typeFlex(row, center, space-between);
+        }
+        width: 7%;
+        & img {
+          width: 16px;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}

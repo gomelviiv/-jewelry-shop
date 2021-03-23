@@ -4,7 +4,13 @@
       "noImplicitAny": true,
       "module": "commonjs",
       "target": "es2015",
-      "jsx": "react"
+      "jsx": "react",
+      "baseUrl": "./",
+      "paths": {
+        "Assets": [ "./assets"],
+        "Components": [ "src/components"],
+        "Pages": [ "src/pages"],
+      }
     },
     "include": [
       "./src/**/*"

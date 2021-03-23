@@ -1,4 +1,8 @@
-@import 'reset';
-@import 'variables';
+@import 'const/reset';
+@import 'const/variables';
+@import 'const/mixins';
+
+@import 'app';
+@import 'pages/all';
+@import 'sections/all';
 @import 'components/all';
-@import 'app'
