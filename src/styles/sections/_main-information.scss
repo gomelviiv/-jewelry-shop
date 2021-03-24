@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  padding-bottom: 30px;
   &__slogan {
     @include typeText($main-color, $main-font);
     font-size: 36px;
@@ -16,8 +17,9 @@
     padding-top: 600px;
     padding-bottom: 95px;
   }
-  &__button {
+  .main-button {
     @include mainStyleButton($main-color, $main-border, none);
+    @include typeText($main-color, $main-font);
     margin-top: 50px;
     text-transform: uppercase;
     &:focus {

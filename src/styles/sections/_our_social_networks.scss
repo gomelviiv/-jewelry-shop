@@ -1,0 +1,30 @@
+.our-social-networks {
+  padding-top: 15px;
+  padding-bottom: 150px;
+  @include typeText($secondary-color, $main-font);
+  .wrapper {
+    @include wrapper;
+    .social-networks {
+      margin-top: 60px;
+      @include typeFlex(column, none, space-between);
+      &__top {
+        @include typeFlex(row, none, space-between);
+        & div {
+          width: 50%;
+          overflow: hidden;
+          @include typeFlex(row, none, space-between);
+        }
+      }
+      &__bottom {
+        @include typeFlex(row, none, space-between);
+        & div {
+          width: 50%;
+          @include typeFlex(row, none, space-between);
+          & img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

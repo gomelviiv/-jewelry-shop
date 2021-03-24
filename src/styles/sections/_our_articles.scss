@@ -1,0 +1,36 @@
+.our-articles {
+  @include typeText($secondary-color, $main-font);
+  padding: 135px 0;
+  text-align: center;
+  .wrapper {
+    @include wrapper;
+    .blog-articles {
+      margin-top: 60px;
+      @include typeFlex(row, center, space-between);
+      flex-wrap: wrap;
+      &__item {
+        & figcaption {
+          position: absolute;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 29px;
+          top: 248px;
+          left: 40px;
+          right: 40px;
+          bottom: 35px;
+          letter-spacing: 0em;
+          text-align: center;
+          text-align: center;
+          text-transform: uppercase;
+          color: $main-color;
+        }
+      }
+    }
+    .main-button {
+      margin-top: 60px;
+      text-transform: uppercase;
+      @include mainStyleButton($main-color, $main-border, #333333);
+    }
+  }
+}

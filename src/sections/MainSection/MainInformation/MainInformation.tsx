@@ -5,7 +5,7 @@ function MainInformation() {
   return (
     <section className="main-information">
       <p className="main-information__slogan">Долго, дорого, богато!</p>
-      <Button className="main-information__button" onClick={() => {}}>
+      <Button className="main-button" onClick={() => {}}>
         каталог изделий
       </Button>
       <hr className="main-information__hr" />
