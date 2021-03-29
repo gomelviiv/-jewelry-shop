@@ -10,13 +10,13 @@ import {
 
 function Main() {
   return (
-    <>
+    <div>
       <MainInformation />
       <MainPageCatalog />
       <OurSalons />
       <OurArticles />
       <OurSocialNetworks />
-    </>
+    </div>
   );
 }
 

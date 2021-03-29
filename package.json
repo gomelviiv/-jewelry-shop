@@ -4,14 +4,30 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@types/react-router-dom": "^5.1.7",
+    "@webpack-cli/init": "^1.1.3",
     "core-js": "^3.9.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "immutability-helper": "^3.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "regenerator-runtime": "^0.13.7"
   },
   "scripts": {
-    "webpack:dev": "npx webpack --config webpack.config.js"
+    "start": "webpack serve  --mode development --open --hot  ",
+    "webpack:dev": "npx webpack --config webpack.config.js",
+    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pretest"
+    }
+  },
+  "lint-staged": {
+    "*.tsx": ["./node_modules/.bin/eslint — fix", "git add"]
   },
   "proxy": "http://localhost:3000",
   "devDependencies": {
@@ -21,9 +37,16 @@
     "@babel/preset-typescript": "^7.13.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.0",
     "css-loader": "^5.1.3",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
     "mini-css-extract-plugin": "^1.3.9",
     "node-sass": "^5.0.0",
     "sass-loader": "^11.0.1",
@@ -31,8 +54,10 @@
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.18",
     "typescript": "^4.2.3",
+    "typestyle": "^2.1.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.26.2",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

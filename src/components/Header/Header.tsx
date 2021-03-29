@@ -1,10 +1,13 @@
 import * as React from 'react';
 
+import { HeaderMenu } from './HeaderMenu';
+
 const Header = () => {
   return (
     <header className="header">
       <nav className="header-nav">
-        <ul className="header-menu">
+        <HeaderMenu />
+        {/* <ul className="header-menu">
           <li className="header-menu__item ">
             <a href="#">Контрагентам</a>
           </li>
@@ -34,7 +37,7 @@ const Header = () => {
               <img src="./assets/img/icons/like-icon.png" alt="" />
             </a>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </header>
   );

@@ -1,7 +1,17 @@
 import * as React from 'react';
+import { AllProductDescription } from '../components';
+import { ProductCards, SelectCategory } from '../sections';
 
-function catalog() {
-  return <div></div>;
+function Catalog() {
+  return (
+    <div className="catalog">
+      <div className="wrapper">
+        <SelectCategory />
+        <ProductCards />
+        <AllProductDescription fullProduct={false} />
+      </div>
+    </div>
+  );
 }
 
-export default catalog;
+export default Catalog;

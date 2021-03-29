@@ -9,35 +9,35 @@
     @include wrapper;
     .main-menu {
       margin-top: 106px;
-      @include typeFlex(row, center, space-between);
       margin-bottom: 55px;
+      @include typeFlex(row, center, space-between);
       &__item {
         position: relative;
-        &-button {
-          text-transform: uppercase;
-
-          @include typeText($secondary-color, $main-font);
-          @include mainStyleButton($secondary-color, 1px solid #d6d6d6, #ffffff);
-          position: relative;
-          z-index: 4;
-          &:hover + .main-menu__item-border {
-            display: none;
+        & a {
+          .main-menu__item-button {
+            position: relative;
+            text-transform: uppercase;
+            @include typeText($secondary-color, $main-font);
+            @include mainStyleButton($secondary-color, 1px solid #d6d6d6, #ffffff);
+            &:hover {
+              background: #333333;
+              color: #fff;
+              transition: all 0.5s;
+            }
           }
-          &:hover {
-            background: #333333;
-            color: #ffffff;
+          &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 6px 0 0 6px;
+            @include mainStyleButton($secondary-color, 1px solid #d6d6d6, none);
           }
-        }
-        &-border {
-          @include mainStyleButton($secondary-color, 1px solid #d6d6d6, none);
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 6px;
-          left: 6px;
-          &:hover + .main-menu__item-button {
-            display: none;
-            background: #333333;
+          &:hover:before {
+            content: none;
           }
         }
       }

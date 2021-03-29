@@ -3,3 +3,7 @@ export { default as Button } from './Button';
 export { default as SectionText } from './SectionText';
 export { default as Figure } from './Figure';
 export { default as Footer } from './Footer';
+export { default as FormSelectCategory } from './FormSelectCategory';
+export { default as FigureProductCard } from './FigureProductCard';
+export { default as AllProductDescription } from './AllProductDescription';
+export { default as SimpleBreadcrumbs } from './SimpleBreadcrumbs';

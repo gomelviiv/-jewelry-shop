@@ -10,7 +10,11 @@ ul[class],
 ol[class] {
   padding: 0;
 }
-
+::-moz-focus-outer,
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
 /* Убираем внешние отступы */
 body,
 h1,

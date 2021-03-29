@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Button, SectionText, Figure } from '../../../components';
 
@@ -34,46 +35,50 @@ function MainPageCatalog() {
     <section className="main-page-catalog">
       <div className="wrapper">
         <SectionText paragraph={'К мероприятиям'} heading={'Настоящая красота здесь!'} />
-        {/* <p className="main-page-catalog__p">К мероприятиям</p>
-        <h2 className="main-page-catalog__h2">Настоящая красота здесь!</h2> */}
-        <div className="main-menu">
-          <div className="main-menu__item">
-            <Button className="main-menu__item-button " onClick={() => {}}>
-              Свадьба
-            </Button>
-            <div className="main-menu__item-border" />
-          </div>
-          <div className="main-menu__item">
-            <Button className="main-menu__item-button " onClick={() => {}}>
-              МУЖУ
-            </Button>
-            <div className="main-menu__item-border" />
-          </div>
-          <div className="main-menu__item">
-            <Button className="main-menu__item-button " onClick={() => {}}>
-              жене
-            </Button>
-            <div className="main-menu__item-border" />
-          </div>
-          <div className="main-menu__item">
-            <Button className="main-menu__item-button " onClick={() => {}}>
-              партнеру
-            </Button>
-            <div className="main-menu__item-border" />
-          </div>
-          <div className="main-menu__item">
-            <Button className="main-menu__item-button " onClick={() => {}}>
-              коллекции
-            </Button>
-            <div className="main-menu__item-border" />
-          </div>
-          <div className="main-menu__item">
-            <Button className="main-menu__item-button " onClick={() => {}}>
-              редкость
-            </Button>
-            <div className="main-menu__item-border" />
-          </div>
-        </div>
+        <ul className="main-menu">
+          <li className="main-menu__item">
+            <Link to="/catalog">
+              <Button className="main-menu__item-button " onClick={() => {}}>
+                Свадьба
+              </Button>
+            </Link>
+          </li>
+          <li className="main-menu__item">
+            <Link to="/catalog">
+              <Button className="main-menu__item-button " onClick={() => {}}>
+                МУЖУ
+              </Button>
+            </Link>
+          </li>
+          <li className="main-menu__item">
+            <Link to="/catalog">
+              <Button className="main-menu__item-button " onClick={() => {}}>
+                жене
+              </Button>
+            </Link>
+          </li>
+          <li className="main-menu__item">
+            <Link to="/catalog">
+              <Button className="main-menu__item-button " onClick={() => {}}>
+                партнеру
+              </Button>
+            </Link>
+          </li>
+          <li className="main-menu__item">
+            <Link to="/catalog">
+              <Button className="main-menu__item-button " onClick={() => {}}>
+                коллекции
+              </Button>
+            </Link>
+          </li>
+          <li className="main-menu__item">
+            <Link to="/catalog">
+              <Button className="main-menu__item-button " onClick={() => {}}>
+                редкость
+              </Button>
+            </Link>
+          </li>
+        </ul>
         <div className="tile">
           {menuTile &&
             menuTile.map((value, index) => (

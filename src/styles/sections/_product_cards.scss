@@ -1,0 +1,16 @@
+.product-cards {
+  margin-top: 95px;
+  text-align: center;
+  & div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__button {
+    margin-bottom: 90px;
+    text-transform: uppercase;
+    @include mainStyleButton($main-color, 1px solid #333333, #333333);
+  }
+}

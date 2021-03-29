@@ -1,11 +1,16 @@
 .header {
-  position: absolute;
+  position: relative;
+  background: #333333;
   width: 100%;
-  max-width: 1450px;
-  left: 50%;
-  margin-left: -725px;
-  top: 25px;
-  height: 52px;
+  // max-width: 100%;
+  // left: 0;
+  // margin-left: 0;
+  // top: 0;
+  // max-width: 1450px;
+  // left: 50%;
+  // margin-left: -725px;
+  height: auto;
+  padding: 27px 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
@@ -29,24 +34,24 @@
           width: 230px;
           height: 60px;
         }
-      }
-      &__item-logo::before {
-        content: url(./assets/img/icons/stone-icon.png);
-        display: block;
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 18px;
-        left: 42.4%;
-      }
-      &__item-logo::after {
-        content: url(./assets/img/icons/stone-icon.png);
-        display: block;
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 18px;
-        left: 53.55%;
+        &::before {
+          content: url(./assets/img/icons/stone-icon.png);
+          display: block;
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          top: 45px;
+          left: 42.45%;
+        }
+        &::after {
+          content: url(./assets/img/icons/stone-icon.png);
+          display: block;
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          top: 45px;
+          left: 51.75%;
+        }
       }
 
       &__item-search {
