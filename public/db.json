@@ -1,0 +1,56 @@
+{
+    "jewelry": [ 
+      {
+        "id": 0,
+        "img": "podveski.png",
+        "name": "Dolce & Gabanna",
+        "brand": {
+          "value": 0,
+          "text": "Dolce & Gabanna"
+        },
+        "price": 803,
+        "gender": {
+          "value": 0,
+          "text": "женский"
+        },
+        "season": {
+          "value": 0,
+          "text": "зима"
+        },
+        "type": {
+          "value": 0,
+          "text": "кольцо"
+        },
+        "event": {
+          "value": 0,
+          "text": "свадьба"
+        }
+      },
+      {
+        "id": 1,
+        "img": "ring.png",
+        "name": "Gabanna & Dolce",
+        "brand": {
+          "value": 1,
+          "text": "Gabanna & Dolce"
+        },
+        "price": 1600,
+        "gender": {
+          "value": 1,
+          "text": "мужской"
+        },
+        "season": {
+          "value": 1,
+          "text": "лето"
+        },
+        "type": {
+          "value": 1,
+          "text": "подвеска"
+        },
+        "event": {
+          "value": 1,
+          "text": "день рождения"
+        }
+      }
+    ]
+  }

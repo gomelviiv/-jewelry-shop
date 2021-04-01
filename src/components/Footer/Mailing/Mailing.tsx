@@ -29,7 +29,7 @@ function Mailing() {
             <div className="big-border">
               <div className="middle-border">
                 <input placeholder="ВАШ E-MAIl" type="text" />
-                <Button className="main-button" onClick={() => {}}>
+                <Button className="main-button" value="" onClick={() => {}}>
                   отправить
                 </Button>
               </div>

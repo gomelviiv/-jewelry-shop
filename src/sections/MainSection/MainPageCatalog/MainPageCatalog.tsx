@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
 import { Button, SectionText, Figure } from '../../../components';
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { SetGender, SetEvent, SetType, SetSeason } from '../../../redux/reducers/filters/action';
 
 const menuTile = [
   {
@@ -30,54 +32,53 @@ const menuTile = [
   },
 ];
 
-function MainPageCatalog() {
+const menuButton = [
+  {
+    text: 'свадьба',
+    event: () => SetEvent(1),
+  },
+  {
+    text: 'мужу',
+    event: () => SetGender(1),
+  },
+  {
+    text: 'жене',
+    event: () => SetGender(0),
+  },
+  {
+    text: 'партнеру',
+    event: () => SetGender(2),
+  },
+  {
+    text: 'кольцо',
+    event: () => SetType(0),
+  },
+  {
+    text: 'лето',
+    event: () => SetSeason(1),
+  },
+];
+
+const MainPageCatalog: React.FC = () => {
+  const dispatch: Dispatch<any> = useDispatch();
+
   return (
     <section className="main-page-catalog">
       <div className="wrapper">
         <SectionText paragraph={'К мероприятиям'} heading={'Настоящая красота здесь!'} />
         <ul className="main-menu">
-          <li className="main-menu__item">
-            <Link to="/catalog">
-              <Button className="main-menu__item-button " onClick={() => {}}>
-                Свадьба
-              </Button>
-            </Link>
-          </li>
-          <li className="main-menu__item">
-            <Link to="/catalog">
-              <Button className="main-menu__item-button " onClick={() => {}}>
-                МУЖУ
-              </Button>
-            </Link>
-          </li>
-          <li className="main-menu__item">
-            <Link to="/catalog">
-              <Button className="main-menu__item-button " onClick={() => {}}>
-                жене
-              </Button>
-            </Link>
-          </li>
-          <li className="main-menu__item">
-            <Link to="/catalog">
-              <Button className="main-menu__item-button " onClick={() => {}}>
-                партнеру
-              </Button>
-            </Link>
-          </li>
-          <li className="main-menu__item">
-            <Link to="/catalog">
-              <Button className="main-menu__item-button " onClick={() => {}}>
-                коллекции
-              </Button>
-            </Link>
-          </li>
-          <li className="main-menu__item">
-            <Link to="/catalog">
-              <Button className="main-menu__item-button " onClick={() => {}}>
-                редкость
-              </Button>
-            </Link>
-          </li>
+          {menuButton &&
+            menuButton.map((value, index) => (
+              <li className="main-menu__item" key={index}>
+                <Link to="catalog">
+                  <Button
+                    className="main-menu__item-button "
+                    onClick={() => dispatch(value.event())}>
+                    {value.text}
+                  </Button>
+                </Link>
+              </li>
+            ))}
         </ul>
         <div className="tile">
           {menuTile &&
@@ -93,6 +94,6 @@ function MainPageCatalog() {
       </div>
     </section>
   );
-}
+};
 
 export default MainPageCatalog;

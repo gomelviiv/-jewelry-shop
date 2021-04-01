@@ -15,7 +15,7 @@ function OurSalons() {
           pretium id dignissim. Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices
           imperdiet lectus nulla tempus. Pharetra lorem sem purus nisi libero viverra ipsum.
         </p>
-        <Button className="main-button" onClick={() => {}}>
+        <Button className="main-button" value="" onClick={() => {}}>
           Наши салоны
         </Button>
       </div>

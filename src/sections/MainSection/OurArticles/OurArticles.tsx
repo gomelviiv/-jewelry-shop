@@ -36,7 +36,7 @@ function OurArticles() {
               />
             ))}
         </div>
-        <Button className="main-button" onClick={() => {}}>
+        <Button className="main-button" value="" onClick={() => {}}>
           читать наш блог
         </Button>
       </div>

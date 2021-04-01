@@ -11,6 +11,7 @@ const App = () => {
     <div>
       <div className="content">
         <Header />
+
         <Route exact path={'/'} component={Main} />
         <Route exact path={'/catalog'} component={Catalog} />
         <Route path={'/catalog/:name'} component={Product} />

@@ -5,7 +5,6 @@ interface IAllProductDescription {
 }
 
 const AllProductDescription: React.FC<IAllProductDescription> = ({ fullProduct }) => {
-  console.log(fullProduct);
   return (
     <div className="all-description-product">
       <div className="all-description-product__left">

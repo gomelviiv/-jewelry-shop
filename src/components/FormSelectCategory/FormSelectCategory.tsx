@@ -5,6 +5,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+import { AppStateType } from '../../redux/reducers';
+import { useSelector } from 'react-redux';
+import { IFilters } from 'src/redux/reducers/filters/type';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     formControl: {
@@ -16,28 +20,50 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-
-function FormSelectCategory() {
-  const classes = useStyles();
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as string);
-  };
-
-  return (
-    <FormControl className={classes.formControl}>
-      <InputLabel id="demo-simple-select-label">Age</InputLabel>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={age}
-        onChange={handleChange}>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
-      </Select>
-    </FormControl>
-  );
+interface IMenuArray {
+  value: number;
+  name: string;
 }
+
+interface IFormSelectCategory {
+  selectItem: {
+    name: string;
+    menuItems: Array<IMenuArray>;
+    event(val: any): void; //to do почему нельзя number
+    type: string;
+  };
+  selectDispatch(index: any, type: string): void; //to do почему нельзя number
+}
+
+const FormSelectCategory: React.FC<IFormSelectCategory> = React.memo(
+  ({ selectItem, selectDispatch }) => {
+    const classes = useStyles();
+    const filters: any = useSelector((state: AppStateType) => state.filters); //to do изменить any
+
+    const handleChange = React.useCallback(
+      (event: React.ChangeEvent<HTMLInputElement>) => {
+        selectDispatch(event.target.value, selectItem.type);
+      },
+      [event],
+    );
+    let checkValue = filters[Object.keys(filters).find((key) => key == selectItem.type)];
+    return (
+      <FormControl className={classes.formControl}>
+        <InputLabel id="demo-simple-select-label">{selectItem.name}</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={checkValue}
+          onChange={handleChange}>
+          {selectItem.menuItems &&
+            selectItem.menuItems.map((item, index) => (
+              <MenuItem key={index} value={item.value}>
+                {item.name}
+              </MenuItem>
+            ))}
+        </Select>
+      </FormControl>
+    );
+  },
+);
 export default FormSelectCategory;

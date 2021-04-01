@@ -2,12 +2,14 @@ import * as React from 'react';
 
 interface IButton {
   className: string;
-  onClick: Function;
+  onClick(): void;
+  value?: any;
+  name?: any;
 }
-
-const Button: React.FC<IButton> = ({ className, onClick, children }) => {
+// event: React.ChangeEvent<HTMLButtonElement>
+const Button: React.FC<IButton> = ({ className, value, name, onClick, children }) => {
   return (
-    <button className={`main-button ${className}`} onClick={() => onClick}>
+    <button className={`main-button ${className}`} name={name} value={value} onClick={onClick}>
       {children}
     </button>
   );

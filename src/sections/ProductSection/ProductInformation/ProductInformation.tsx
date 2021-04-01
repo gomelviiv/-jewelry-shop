@@ -38,10 +38,10 @@ function ProductInformation() {
           </p>
           <h4 className="right-information__h4">200 000 ₽ </h4>
           <div className="right-information__buttons">
-            <Button className="" onClick={() => {}}>
+            <Button className="" value="" onClick={() => {}}>
               купить
             </Button>
-            <Button className="" onClick={() => {}}>
+            <Button className="" value="" onClick={() => {}}>
               добавить в корзину
             </Button>
           </div>

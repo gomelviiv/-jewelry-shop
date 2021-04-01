@@ -9,15 +9,10 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, '/dist'),
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
-    alias: {
-      Assets: path.resolve(__dirname, './assets/'),
-      Components: path.resolve(__dirname, '../src/components/'),
-      Pages: path.resolve(__dirname, '../src/pages/'),
-    },
   },
   devtool: 'source-map',
   module: {
@@ -37,7 +32,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
             loader: 'file-loader',
