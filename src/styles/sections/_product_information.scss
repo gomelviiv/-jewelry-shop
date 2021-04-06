@@ -4,16 +4,17 @@
   @include typeFlex(row, none, space-between);
   margin-bottom: 100px;
   &__left {
-    // width: 45%;
-    @include typeFlex(column, center, space-between);
+    width: 45%;
+    @include typeFlex(column, center, null);
     &-top {
+      width: 100%;
       & img {
         width: 100%;
         height: auto;
       }
     }
     &-bottom {
-      margin-top: 45px;
+      margin-top: 62px;
       width: 100%;
       @include typeFlex(row, center, space-between);
       & img {

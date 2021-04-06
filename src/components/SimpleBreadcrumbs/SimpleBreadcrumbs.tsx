@@ -3,26 +3,28 @@ import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 
+import { Link as LinkDom } from 'react-router-dom';
+
 interface ISimpleBreadcrumbs {
   className: string;
   onClick: Function;
+  itemName: string;
 }
 
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
+function handleClick(newPath: string) {
+  <LinkDom to={`${newPath}`} />;
 }
 
-const SimpleBreadcrumbs: React.FC<ISimpleBreadcrumbs> = ({ className, onClick }) => {
+const SimpleBreadcrumbs: React.FC<ISimpleBreadcrumbs> = ({ className, itemName }) => {
   return (
     <Breadcrumbs className={`simple-breadcrumbs ${className}`} aria-label="breadcrumb">
-      <Link color="inherit" href="/" onClick={handleClick}>
-        Material-UI
+      <Link color="inherit" href={'/'} onClick={() => handleClick('/')}>
+        Home
       </Link>
-      <Link color="inherit" href="/getting-started/installation/" onClick={handleClick}>
-        Core
+      <Link color="inherit" href="/catalog" onClick={() => handleClick('/catalog')}>
+        Catalog
       </Link>
-      <Typography color="textPrimary">Breadcrumb</Typography>
+      <Typography color="textPrimary">{itemName}</Typography>
     </Breadcrumbs>
   );
 };

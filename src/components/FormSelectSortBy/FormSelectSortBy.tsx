@@ -32,7 +32,7 @@ interface IFormSelectSortBy {
 const FormSelectSortBy: React.FC<IFormSelectSortBy> = React.memo(
   ({ sortItems, selectDispatchSortBy }) => {
     const classes = useStyles();
-    const sortBy: ISortBy = useSelector((state: AppStateType) => state.sortBy); //to do изменить any
+    const sortBy: ISortBy = useSelector((state: AppStateType) => state.sortBy);
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
       selectDispatchSortBy(event.target.value);

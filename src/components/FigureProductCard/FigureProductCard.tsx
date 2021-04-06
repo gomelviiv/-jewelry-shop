@@ -30,7 +30,7 @@ const FigureProductCard: React.FC<IFigureProductCard> = ({
       <figcaption className="product-card-figcaption">
         <p className="product-card-figcaption__p">{type.text}</p>
         <h2 className="product-card-figcaption__h2">{name}</h2>
-        <Link to={`/catalog/${name}`}>
+        <Link to={{ pathname: `/catalog/${id}`, state: { fromDashboard: name } }}>
           <Button className="product-card-figcaption__button" value="" onClick={() => {}}>
             {price} ₽
           </Button>
