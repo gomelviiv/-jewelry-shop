@@ -10,7 +10,7 @@ export interface IJewelryItem {
   price: number;
   gender: IJewelryField;
   season: IJewelryField;
-  types: IJewelryField;
+  type: IJewelryField;
   event: IJewelryField;
 }
 

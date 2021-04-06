@@ -8,6 +8,8 @@ export const fetchJewelry = (
   season: number,
   event: number,
   type: number,
+  sortByType: string,
+  order: string,
 ) => (dispatch: any) => {
   dispatch(SetLoaded(false));
   axios
@@ -16,11 +18,9 @@ export const fetchJewelry = (
         brand !== null ? `brand.value=${brand}` : ''
       }&${season !== null ? `season.value=${season}` : ''}&${
         event !== null ? `event.value=${event}` : ''
-      }&${type !== null ? `type.value=${type}` : ''}&`,
+      }&${type !== null ? `type.value=${type}` : ''}&_sort=${sortByType}&_order=${order}`,
     )
     .then(({ data }) => {
-      console.log('data', data);
-
       dispatch(SetJewelry(data));
     });
 };

@@ -14,17 +14,6 @@ interface IFigureProductCard {
   type: IJewelryField;
   event: IJewelryField;
   className: string;
-  item: {
-    id: number;
-    img: string;
-    name: string;
-    brand: IJewelryField;
-    price: number;
-    gender: IJewelryField;
-    season: IJewelryField;
-    type: IJewelryField;
-    event: IJewelryField;
-  };
 }
 
 const FigureProductCard: React.FC<IFigureProductCard> = ({
@@ -33,7 +22,6 @@ const FigureProductCard: React.FC<IFigureProductCard> = ({
   name,
   price,
   type,
-  item,
   id,
 }) => {
   return (
@@ -42,11 +30,7 @@ const FigureProductCard: React.FC<IFigureProductCard> = ({
       <figcaption className="product-card-figcaption">
         <p className="product-card-figcaption__p">{type.text}</p>
         <h2 className="product-card-figcaption__h2">{name}</h2>
-        <Link
-          to={{
-            pathname: `/catalog/${name}`,
-            state: item,
-          }}>
+        <Link to={`/catalog/${name}`}>
           <Button className="product-card-figcaption__button" value="" onClick={() => {}}>
             {price} ₽
           </Button>

@@ -3,7 +3,7 @@
       {
         "id": 0,
         "img": "podveski.png",
-        "name": "Dolce & Gabanna",
+        "name": "BDolce & Gabanna",
         "brand": {
           "value": 0,
           "text": "Dolce & Gabanna"
@@ -27,9 +27,35 @@
         }
       },
       {
-        "id": 1,
+        "id": 2,
         "img": "ring.png",
-        "name": "Gabanna & Dolce",
+        "name": "Aabanna & Dolce",
+        "brand": {
+          "value": 1,
+          "text": "Gabanna & Dolce"
+        },
+        "price": 2000,
+        "gender": {
+          "value": 1,
+          "text": "мужской"
+        },
+        "season": {
+          "value": 1,
+          "text": "лето"
+        },
+        "type": {
+          "value": 1,
+          "text": "подвеска"
+        },
+        "event": {
+          "value": 1,
+          "text": "день рождения"
+        }
+      },
+      {
+        "id": 3,
+        "img": "ring.png",
+        "name": "CGabanna & Dolce",
         "brand": {
           "value": 1,
           "text": "Gabanna & Dolce"

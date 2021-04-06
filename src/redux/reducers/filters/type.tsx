@@ -1,8 +1,4 @@
 export interface IFilters {
-  // sortBy: {
-  //   type: string;
-  //   order: string;
-  // };
   brand: number | null;
   gender: number | null;
   season: number | null;

@@ -2,10 +2,6 @@ import * as actionTypes from './actionTypes';
 import { IFilters, IFiltersPayloadType } from './type';
 
 const initialState = {
-  // sortBy: {
-  //   type: 'rating',
-  //   order: 'desc',
-  // },
   gender: null,
   brand: null,
   season: null,

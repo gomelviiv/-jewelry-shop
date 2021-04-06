@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 
 import { AppStateType } from '../../redux/reducers';
 import { useSelector } from 'react-redux';
+import { ISortBy } from '../../redux/reducers/sortBy/type';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,41 +20,34 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-interface IMenuArray {
-  value: number;
-  name: string;
-}
 
-interface IFormSelectCategory {
-  selectItem: {
+interface IFormSelectSortBy {
+  sortItems: {
     name: string;
-    menuItems: Array<IMenuArray>;
-    event(num: number): void;
-    type: string;
+    sortBy: Array<ISortBy>;
   };
-  selectDispatchFilter(index: number | string, type: string): void;
+  selectDispatchSortBy(propsName: string): void;
 }
 
-const FormSelectCategory: React.FC<IFormSelectCategory> = React.memo(
-  ({ selectItem, selectDispatchFilter }) => {
+const FormSelectSortBy: React.FC<IFormSelectSortBy> = React.memo(
+  ({ sortItems, selectDispatchSortBy }) => {
     const classes = useStyles();
-    const filters: any = useSelector((state: AppStateType) => state.filters); //to do изменить any
+    const sortBy: ISortBy = useSelector((state: AppStateType) => state.sortBy); //to do изменить any
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-      selectDispatchFilter(event.target.value, selectItem.type);
+      selectDispatchSortBy(event.target.value);
     }, []);
-    let checkValue = filters[Object.keys(filters).find((key) => key == selectItem.type)];
     return (
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">{selectItem.name}</InputLabel>
+        <InputLabel id="demo-simple-select-label">{sortItems.name}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={checkValue}
+          value={sortBy.name}
           onChange={handleChange}>
-          {selectItem.menuItems &&
-            selectItem.menuItems.map((item, index) => (
-              <MenuItem key={index} value={item.value}>
+          {sortItems.sortBy &&
+            sortItems.sortBy.map((item: ISortBy, index: number) => (
+              <MenuItem key={index} value={item.name}>
                 {item.name}
               </MenuItem>
             ))}
@@ -62,4 +56,4 @@ const FormSelectCategory: React.FC<IFormSelectCategory> = React.memo(
     );
   },
 );
-export default FormSelectCategory;
+export default FormSelectSortBy;

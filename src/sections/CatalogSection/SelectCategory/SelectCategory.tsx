@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { FormSelectCategory } from '../../../components';
+import { FormSelectCategory, FormSelectSortBy } from '../../../components';
 import {
   SetGender,
   SetEvent,
@@ -10,6 +10,7 @@ import {
   SetSeason,
 } from '../../../redux/reducers/filters/action';
 import { Dispatch } from 'redux';
+import { SetSortBy } from '../../../redux/reducers/sortBy/action';
 
 const selectMenu = [
   {
@@ -25,7 +26,7 @@ const selectMenu = [
       },
     ],
     type: 'brand',
-    event: (chet: number) => SetBrand(chet),
+    event: (num: number) => SetBrand(num),
   },
   {
     name: 'Для кого',
@@ -44,7 +45,7 @@ const selectMenu = [
       },
     ],
     type: 'gender',
-    event: (chet: number) => SetGender(chet),
+    event: (num: number) => SetGender(num),
   },
   {
     name: 'Сезон',
@@ -59,7 +60,7 @@ const selectMenu = [
       },
     ],
     type: 'season',
-    event: (chet: number) => SetSeason(chet),
+    event: (num: number) => SetSeason(num),
   },
   {
     name: 'Событие',
@@ -74,7 +75,7 @@ const selectMenu = [
       },
     ],
     type: 'event',
-    event: (chet: number) => SetEvent(chet),
+    event: (num: number) => SetEvent(num),
   },
   {
     name: 'Тип',
@@ -89,21 +90,48 @@ const selectMenu = [
       },
     ],
     type: 'type',
-    event: (chet: number) => SetType(chet),
+    event: (num: number) => SetType(num),
   },
 ];
 
+const sortItems = {
+  name: 'Сортировка',
+  sortBy: [
+    {
+      sortByType: 'price',
+      order: 'desc',
+      name: 'цене',
+    },
+    {
+      sortByType: 'name',
+      order: 'asc',
+      name: 'алфавиту',
+    },
+  ],
+};
+
 const SelectCategory: React.FC = React.memo(() => {
   const dispatch: Dispatch<any> = useDispatch();
-  const selectDispatch = React.useCallback((index: number, type: string) => {
+  const selectDispatchFilter = React.useCallback((index: number, type: string) => {
     dispatch(selectMenu.find((val) => val.type == type).event(index));
+  }, []);
+  const selectDispatchSortBy = React.useCallback((propsName: string) => {
+    let { sortByType, order, name } = sortItems.sortBy.filter((val) => val.name == propsName)[0];
+    dispatch(SetSortBy({ sortByType, order, name }));
   }, []);
   return (
     <section className="select-category">
       {selectMenu &&
         selectMenu.map((val, index) => (
-          <FormSelectCategory key={index} selectItem={val} selectDispatch={selectDispatch} />
+          <FormSelectCategory
+            key={index}
+            selectItem={val}
+            selectDispatchFilter={selectDispatchFilter}
+          />
         ))}
+      {sortItems && (
+        <FormSelectSortBy sortItems={sortItems} selectDispatchSortBy={selectDispatchSortBy} />
+      )}
     </section>
   );
 });
