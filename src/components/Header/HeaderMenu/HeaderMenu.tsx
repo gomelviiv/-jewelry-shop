@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import InputBase from '@material-ui/core/InputBase';
 import Search from '@material-ui/icons/Search';
 import { makeStyles, fade, Theme } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -92,7 +93,9 @@ function HeaderMenu() {
             <a href="#">Вакансии</a>
           </div>
           <div>
-            <img src="./assets/img/OJJo.png" alt="" />
+            <Link to="/">
+              <img src="./assets/img/OJJo.png" alt="" />
+            </Link>
           </div>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -112,7 +115,9 @@ function HeaderMenu() {
           </div>
           <div className={classes.headerIcons}>
             <span className="material-icons">favorite_border</span>
-            <span className="material-icons">person</span>
+            <Link to="/basket">
+              <span className="material-icons">person</span>
+            </Link>
           </div>
         </Toolbar>
       </Container>

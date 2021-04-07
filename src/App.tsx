@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import './styles/_app.scss';
 
 import { Header, Footer } from './components';
-import { Main, Catalog, Product } from './pages/';
+import { Main, Catalog, Product, Basket } from './pages/';
 
 const App = () => {
   return (
@@ -14,6 +14,7 @@ const App = () => {
 
         <Route exact path={'/'} component={Main} />
         <Route exact path={'/catalog'} component={Catalog} />
+        <Route exact path={'/basket'} component={Basket} />
         <Route path={'/catalog/:name'} component={Product} />
       </div>
       <Footer />

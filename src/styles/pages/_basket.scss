@@ -1,0 +1,8 @@
+.basket {
+  @include typeText($secondary-color, $main-font);
+  margin: 50px 0;
+
+  .wrapper {
+    @include wrapper;
+  }
+}

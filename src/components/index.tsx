@@ -8,3 +8,4 @@ export { default as FigureProductCard } from './FigureProductCard';
 export { default as AllProductDescription } from './AllProductDescription';
 export { default as SimpleBreadcrumbs } from './SimpleBreadcrumbs';
 export { default as FormSelectSortBy } from './FormSelectSortBy';
+export { default as BasketItem } from './BasketItem';
