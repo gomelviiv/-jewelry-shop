@@ -11,3 +11,4 @@ export { default as ProductInformation } from './ProductSection/ProductInformati
 
 export { default as HeaderBasket } from './BasketSection/HeaderBasket/';
 export { default as BodyBasket } from './BasketSection/BodyBasket/';
+export { default as BottomBasket } from './BasketSection/BottomBasket/';

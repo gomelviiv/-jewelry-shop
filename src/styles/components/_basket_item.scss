@@ -18,7 +18,7 @@
     justify-content: center;
     width: 40%;
     & h3 {
-      font-weight: bold;
+      font-weight: 600;
       font-size: 22px;
       line-height: 27px;
       letter-spacing: 0.01em;
@@ -35,6 +35,7 @@
     justify-content: space-between;
     width: 13%;
     & button {
+      cursor: pointer;
       background: none;
       border-radius: 50%;
       @include typeFlex(row, center, center);
@@ -58,6 +59,8 @@
     align-items: center;
     justify-content: center;
     width: 33%;
+    font-weight: 600;
+    font-size: 22px;
   }
 
   .cart__item-remove {
@@ -66,6 +69,7 @@
     justify-content: flex-end;
     width: 4%;
     & button {
+      cursor: pointer;
       @include typeFlex(row, center, center);
       width: 32px;
       height: 32px;

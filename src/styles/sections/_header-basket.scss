@@ -10,8 +10,13 @@
   }
   .basket__clear {
     @include typeFlex(row, center, none);
-    svg {
+    color: #b6b6b6;
+    cursor: pointer;
+    & svg {
       margin-right: 10px;
+    }
+    &:hover {
+      color: black;
     }
   }
 }

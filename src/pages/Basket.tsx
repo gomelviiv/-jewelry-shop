@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BodyBasket, HeaderBasket } from '../sections';
+import { BodyBasket, HeaderBasket, BottomBasket } from '../sections';
 
 function Basket() {
   return (
@@ -7,6 +7,7 @@ function Basket() {
       <div className="wrapper">
         <HeaderBasket />
         <BodyBasket />
+        <BottomBasket />
       </div>
     </div>
   );
