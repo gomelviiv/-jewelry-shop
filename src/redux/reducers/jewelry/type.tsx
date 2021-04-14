@@ -2,6 +2,7 @@ export interface IJewelryField {
   value: number;
   text: string;
 }
+
 export interface IJewelryItem {
   id: number;
   name: string;

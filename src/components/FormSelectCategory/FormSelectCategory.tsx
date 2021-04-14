@@ -14,11 +14,13 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(1),
       minWidth: 120,
     },
+
     selectEmpty: {
       marginTop: theme.spacing(2),
     },
   }),
 );
+
 interface IMenuArray {
   value: number;
   name: string;
@@ -37,12 +39,14 @@ interface IFormSelectCategory {
 const FormSelectCategory: React.FC<IFormSelectCategory> = React.memo(
   ({ selectItem, selectDispatchFilter }) => {
     const classes = useStyles();
-    const filters: any = useSelector((state: AppStateType) => state.filters); //to do изменить any
+    const filters: any = useSelector((state: AppStateType) => state.filters);
+
+    let checkValue = filters[Object.keys(filters).find((key) => key == selectItem.type)];
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
       selectDispatchFilter(event.target.value, selectItem.type);
     }, []);
-    let checkValue = filters[Object.keys(filters).find((key) => key == selectItem.type)];
+
     return (
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">{selectItem.name}</InputLabel>
@@ -62,4 +66,5 @@ const FormSelectCategory: React.FC<IFormSelectCategory> = React.memo(
     );
   },
 );
+
 export default FormSelectCategory;

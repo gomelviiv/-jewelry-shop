@@ -3,11 +3,13 @@
   flex-direction: row;
   padding-bottom: 70px;
   @include typeText($secondary-color, $main-font);
+
   &__left {
     width: 50%;
     display: flex;
     height: 100%;
     flex-direction: column-reverse;
+
     &-p {
       text-align: left;
       position: relative;
@@ -15,6 +17,7 @@
       overflow: hidden;
       order: 0;
     }
+
     &-p::after {
       content: '';
       display: block;
@@ -24,6 +27,7 @@
       top: 0;
       background: linear-gradient(to top, #ffffff, #ffffff00);
     }
+
     &-h2 {
       font-size: 30px;
       font-style: normal;
@@ -33,6 +37,7 @@
       text-align: left;
       margin-bottom: 30px;
     }
+
     &-button {
       text-transform: uppercase;
       background: none;
@@ -44,30 +49,37 @@
       margin-top: 10px;
       width: 40%;
       margin-bottom: 50px;
+
       &:focus {
         outline: none;
       }
+
       &:focus + .all-description-product__left-p::after {
         display: none;
       }
+
       &:focus + .all-description-product__left-p {
         height: auto;
         transition: 2s;
       }
     }
   }
+
   &__right {
     margin-left: 10%;
     width: 30%;
     height: 100%;
     @include typeFlex(column, center, space-between);
+
     & div {
       @include typeFlex(row, none, space-between);
       width: 100%;
       text-align: center;
+
       & div {
         width: 50%;
         @include typeFlex(column, center, space-between);
+
         & img {
           margin-bottom: 15px;
         }
