@@ -94,7 +94,7 @@ function HeaderMenu() {
           </div>
           <div>
             <Link to="/">
-              <img src="./assets/img/OJJo.png" alt="" />
+              <img src="./assets/img/OJJo.png" alt="логотип сайта OJJO" />
             </Link>
           </div>
           <div className={classes.search}>

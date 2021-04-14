@@ -1,11 +1,13 @@
 .cart__item {
   @include typeFlex(row, center, space-between);
   margin-top: 50px;
-  .cart__item-img {
+
+  &-img {
     display: flex;
     align-items: center;
     margin-right: 15px;
     width: 10%;
+
     & img {
       width: 80px;
       height: 80px;
@@ -17,23 +19,26 @@
     flex-direction: column;
     justify-content: center;
     width: 40%;
+
     & h3 {
       font-weight: 600;
       font-size: 22px;
       line-height: 27px;
       letter-spacing: 0.01em;
     }
+
     & p {
       font-size: 18px;
-      color: #8d8d8d;
+      color: $secondary-basket-color;
     }
   }
 
-  .cart__item-count {
+  &-count {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 13%;
+
     & button {
       cursor: pointer;
       background: none;
@@ -45,16 +50,18 @@
       padding: 0;
       border: 2px $secondary-color solid;
     }
+
     & button:focus {
       outline: none;
     }
+
     & button:hover {
       background: $secondary-color;
-      color: white;
+      color: $main-color;
     }
   }
 
-  .cart__item-price {
+  &-price {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,29 +70,33 @@
     font-size: 22px;
   }
 
-  .cart__item-remove {
+  &-remove {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 4%;
+
     & button {
       cursor: pointer;
       @include typeFlex(row, center, center);
       width: 32px;
       height: 32px;
-      color: #dddddd;
+      color: $button-secondary-color;
       min-width: 32px;
       background: none;
       border-radius: 50%;
       border: none;
     }
+
     & button:focus {
       outline: none;
     }
+
     & button:hover {
-      background: #dddddd;
-      color: black;
+      background: $button-secondary-color;
+      color: $main-basket-color;
     }
+
     & svg {
       width: 40px;
       height: 40px;
