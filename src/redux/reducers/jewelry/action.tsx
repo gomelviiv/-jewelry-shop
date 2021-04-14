@@ -26,7 +26,7 @@ export const fetchJewelry = (
 };
 
 export const fetchJewelryById = async (id: string) => {
-  return await axios.get(`http://localhost:8081/jewelry/${id}`).then((data) => data.data);
+  return await axios.get(`http://localhost:8081/jewelry/${id}`);
 };
 
 export const SetJewelry = (payload: string | number = null) => ({

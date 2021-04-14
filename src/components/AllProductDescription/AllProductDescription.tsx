@@ -26,21 +26,21 @@ const AllProductDescription: React.FC<IAllProductDescription> = ({ fullProduct }
       <div className="all-description-product__right">
         <div className="cards-product__left">
           <div>
-            <img src="../assets/img/car.png" alt="" />
+            <img src="../assets/img/car.png" alt="Бесплатная доставка" />
             <p>Бесплатная доставка</p>
           </div>
           <div>
-            <img src="../assets/img/Group-3.png" alt="" />
+            <img src="../assets/img/Group-3.png" alt="Индивидуальный дизайн" />
             <p>Индивидуальный дизайн</p>
           </div>
         </div>
         <div className="cards-product__right">
           <div>
-            <img src="../assets/img/Group-2.png" alt="" />
+            <img src="../assets/img/Group-2.png" alt="Бесплатная примерка" />
             <p>Бесплатная примерка</p>
           </div>
           <div>
-            <img src="../assets/img/Group.png" alt="" />
+            <img src="../assets/img/Group.png" alt="Личный подход" />
             <p>Личный подход</p>
           </div>
         </div>

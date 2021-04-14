@@ -4,10 +4,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { useSelector } from 'react-redux';
 
 import { AppStateType } from '../../redux/reducers';
-import { useSelector } from 'react-redux';
 import { ISortBy } from '../../redux/reducers/sortBy/type';
+
+import { sortBySelector } from '../../redux/reducers/sortBy/selectors';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,7 +34,7 @@ interface IFormSelectSortBy {
 const FormSelectSortBy: React.FC<IFormSelectSortBy> = React.memo(
   ({ sortItems, selectDispatchSortBy }) => {
     const classes = useStyles();
-    const sortBy: ISortBy = useSelector((state: AppStateType) => state.sortBy);
+    const sortBy: ISortBy = useSelector(sortBySelector);
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
       selectDispatchSortBy(event.target.value);

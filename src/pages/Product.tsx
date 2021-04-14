@@ -6,18 +6,18 @@ import { AllProductDescription, SimpleBreadcrumbs } from '../components';
 import { fetchJewelryById } from '../redux/reducers/jewelry/action';
 import { IJewelryItem } from '../redux/reducers/jewelry/type';
 
-import * as H from 'history';
+import { Location, History } from 'history';
 
 interface Product {
-  id: any;
+  id: string;
 }
 
 interface Props extends RouteComponentProps<Product> {}
 export interface RouteComponentProps<P> {
   match: match<P>;
-  location: H.Location;
-  history: H.History;
-  staticContext?: any;
+  location: Location;
+  history: History;
+  staticContext?: unknown;
 }
 
 export interface match<P> {
@@ -31,7 +31,7 @@ const Product: React.FC<Props> = ({ match }) => {
   const [item, setItem] = React.useState<IJewelryItem | null>(null);
   React.useEffect(() => {
     const dataProduct = fetchJewelryById(match.params.id);
-    dataProduct.then((data: IJewelryItem) => setItem(data));
+    dataProduct.then((data: any) => setItem(data.data));
   }, []);
   return (
     <div className="product">
