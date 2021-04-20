@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from '../../../components';
 
-function ProductInformation() {
+const ProductInformation: React.FC = () => {
   return (
     <section className="product-information">
       <div className="product-information__left">
@@ -49,6 +49,6 @@ function ProductInformation() {
       </div>
     </section>
   );
-}
+};
 
 export default ProductInformation;
