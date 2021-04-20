@@ -26,4 +26,5 @@ const SimpleBreadcrumbs: React.FC<ISimpleBreadcrumbs> = ({ className, onClick })
     </Breadcrumbs>
   );
 };
+
 export default SimpleBreadcrumbs;

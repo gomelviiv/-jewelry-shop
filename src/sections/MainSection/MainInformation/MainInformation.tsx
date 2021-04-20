@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Button } from '../../../components/';
+
 function MainInformation() {
   return (
     <section className="main-information">

@@ -1,6 +1,7 @@
 .catalog {
   @include typeText($main-color, $main-font);
   color: black;
+
   .wrapper {
     @include wrapper;
   }

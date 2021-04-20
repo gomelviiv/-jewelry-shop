@@ -9,7 +9,6 @@ function Product() {
       <div className="wrapper">
         <SimpleBreadcrumbs className="" onClick={() => {}} />
         <ProductInformation />
-
         <AllProductDescription fullProduct={true} />
       </div>
     </div>

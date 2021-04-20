@@ -2,13 +2,14 @@
   width: 100%;
   max-width: 280px;
   margin-bottom: 95px;
-
   justify-content: space-between;
+
   .product-card-figcaption {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     &__p {
       margin-top: 25px;
       font-size: 16px;
@@ -18,6 +19,7 @@
       letter-spacing: 0em;
       text-align: center;
     }
+
     &__h2 {
       margin-top: 25px;
       font-size: 24px;
@@ -27,6 +29,7 @@
       letter-spacing: 0em;
       text-align: center;
     }
+
     &__button {
       @include mainStyleButton($main-color, 1px solid #333333, #333333);
       padding: 10px 20px;

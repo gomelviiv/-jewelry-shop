@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { SectionText } from '../../../components';
+
 function OurSocialNetworks() {
   return (
     <section className="our-social-networks">

@@ -112,13 +112,17 @@ const sortItems = {
 
 const SelectCategory: React.FC = React.memo(() => {
   const dispatch: Dispatch<any> = useDispatch();
+
   const selectDispatchFilter = React.useCallback((index: number, type: string) => {
     dispatch(selectMenu.find((val) => val.type == type).event(index));
   }, []);
+
   const selectDispatchSortBy = React.useCallback((propsName: string) => {
     let { sortByType, order, name } = sortItems.sortBy.filter((val) => val.name == propsName)[0];
+
     dispatch(SetSortBy({ sortByType, order, name }));
   }, []);
+
   return (
     <section className="select-category">
       {selectMenu &&

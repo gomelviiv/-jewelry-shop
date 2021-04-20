@@ -1,5 +1,5 @@
 import * as actionTypes from './actionType';
-import { IJewelry, IJewelryItem, IJewelryPayloadType } from './type';
+import { IJewelry, IJewelryPayloadType } from './type';
 
 const initialState = {
   items: [],
@@ -14,6 +14,7 @@ const jewelryReducer = (
     case actionTypes.SET_JEWELRY: {
       return { ...state, items: action.payload, isLoaded: true };
     }
+
     case actionTypes.SET_LOADED: {
       let newState = { ...state };
       newState.isLoaded = action.payload;
