@@ -3,18 +3,21 @@ import * as React from 'react';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import { Button } from '../../../components';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { basketSelector } from '../../../redux/basket/selectors';
 
 function BottomBasket() {
+  const { totalCount, totalPrice }: any = useSelector(basketSelector);
   return (
     <div className="basket__bottom">
       <div className="basket__bottom-details">
         <span>
           Всего едеиниц товара:
-          <b>4шт</b>
+          <b> {totalCount} шт</b>
         </span>
         <span>
           Сумма заказа:
-          <b>1580 ₽</b>
+          <b>{totalPrice} ₽</b>
         </span>
       </div>
       <div className="basket__bottom-buttons">

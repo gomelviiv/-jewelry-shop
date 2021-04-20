@@ -6,10 +6,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { useSelector } from 'react-redux';
 
-import { AppStateType } from '../../redux/reducers';
-import { ISortBy } from '../../redux/reducers/sortBy/type';
+import { ISortBy } from '../../redux/sortBy/type';
 
-import { sortBySelector } from '../../redux/reducers/sortBy/selectors';
+import { sortBySelector } from '../../redux/sortBy/selectors';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,7 +35,6 @@ const FormSelectSortBy: React.FC<IFormSelectSortBy> = React.memo(
   ({ sortItems, selectDispatchSortBy }) => {
     const classes = useStyles();
     const sortBy: ISortBy = useSelector(sortBySelector);
-
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
       selectDispatchSortBy(event.target.value);

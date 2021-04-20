@@ -1,4 +1,4 @@
-import { IJewelryItem } from '../redux/reducers/jewelry/type';
+import { IJewelryItem } from '../redux/jewelry/type';
 
 export class BasketHelper {
   static getTotalPriceNewItem = (arr: Array<IJewelryItem>) =>

@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 import { IBasket, IBasketPayloadType } from './type';
-import { BasketHelper } from '../../../helpers/basketHelper';
+import { BasketHelper } from '../../helpers/basketHelper';
 
 const initialState = {
   totalCount: 0,

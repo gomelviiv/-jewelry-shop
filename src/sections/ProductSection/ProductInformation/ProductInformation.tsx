@@ -1,23 +1,29 @@
 import * as React from 'react';
 import { Button } from '../../../components';
 
-import { IJewelryItem } from '../../../redux/reducers/jewelry/type';
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+
+import { AddJewelryBasket } from '../../../redux/basket/action';
+import { IJewelryItem } from '../../../redux/jewelry/type';
 
 interface IProductInformation {
   item: IJewelryItem;
 }
 
 const ProductInformation: React.FC<IProductInformation> = ({ item }) => {
+  const dispatch: Dispatch<any> = useDispatch();
+
   return (
     <section className="product-information">
       <div className="product-information__left">
         <div className="product-information__left-top">
-          <img src={`../assets/img/${item.img}`} alt="" />
+          <img src={`../assets/img/${item.img}`} alt="product-images-1" />
         </div>
         <div className="product-information__left-bottom">
-          <img src={`../assets/img/${item.img}`} alt="" />
-          <img src={`../assets/img/${item.img}`} alt="" />
-          <img src={`../assets/img/${item.img}`} alt="" />
+          <img src={`../assets/img/${item.img}`} alt="product-images-2" />
+          <img src={`../assets/img/${item.img}`} alt="product-images-3" />
+          <img src={`../assets/img/${item.img}`} alt="product-images-4" />
         </div>
       </div>
       <div className="product-information__right">
@@ -47,7 +53,12 @@ const ProductInformation: React.FC<IProductInformation> = ({ item }) => {
             <Button className="" value="" onClick={() => {}}>
               купить
             </Button>
-            <Button className="" value="" onClick={() => {}}>
+            <Button
+              className=""
+              value=""
+              onClick={() => {
+                dispatch(AddJewelryBasket(item));
+              }}>
               добавить в корзину
             </Button>
           </div>

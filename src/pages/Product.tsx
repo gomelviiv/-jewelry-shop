@@ -3,8 +3,8 @@ import * as React from 'react';
 import { ProductInformation } from '../sections/';
 import { AllProductDescription, SimpleBreadcrumbs } from '../components';
 
-import { fetchJewelryById } from '../redux/reducers/jewelry/action';
-import { IJewelryItem } from '../redux/reducers/jewelry/type';
+import { fetchJewelryById } from '../redux/jewelry/action';
+import { IJewelryItem } from '../redux/jewelry/type';
 
 import { Location, History } from 'history';
 
@@ -36,12 +36,8 @@ const Product: React.FC<Props> = ({ match }) => {
   return (
     <div className="product">
       <div className="wrapper">
-
         {item && <SimpleBreadcrumbs className="" itemName={item.name} onClick={() => {}} />}
         {item && <ProductInformation item={item} />}
-
-        <SimpleBreadcrumbs className="" onClick={() => {}} />
-        <ProductInformation />
         <AllProductDescription fullProduct={true} />
       </div>
     </div>

@@ -2,15 +2,9 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { FormSelectCategory, FormSelectSortBy } from '../../../components';
-import {
-  SetGender,
-  SetEvent,
-  SetBrand,
-  SetType,
-  SetSeason,
-} from '../../../redux/reducers/filters/action';
+import { SetGender, SetEvent, SetBrand, SetType, SetSeason } from '../../../redux/filters/action';
 import { Dispatch } from 'redux';
-import { SetSortBy } from '../../../redux/reducers/sortBy/action';
+import { SetSortBy } from '../../../redux/sortBy/action';
 
 const selectMenu = [
   {

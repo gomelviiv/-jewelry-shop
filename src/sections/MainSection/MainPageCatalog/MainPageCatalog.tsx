@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, SectionText, Figure } from '../../../components';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { SetGender, SetEvent, SetType, SetSeason } from '../../../redux/reducers/filters/action';
+import { SetGender, SetEvent, SetType, SetSeason } from '../../../redux/filters/action';
 
 const menuTile = [
   {

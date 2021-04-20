@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as actionTypes from './actionType';
-import { IJewelryItem } from './type';
+import { mainUrl } from '../../const/url';
 export const fetchJewelry = (
   gender: number,
   brand: number,
@@ -15,7 +15,7 @@ export const fetchJewelry = (
 
   axios
     .get(
-      `http://localhost:8081/jewelry?${gender !== null ? `gender.value=${gender}` : ''}&${
+      `${mainUrl}?${gender !== null ? `gender.value=${gender}` : ''}&${
         brand !== null ? `brand.value=${brand}` : ''
       }&${season !== null ? `season.value=${season}` : ''}&${
         event !== null ? `event.value=${event}` : ''
@@ -27,7 +27,7 @@ export const fetchJewelry = (
 };
 
 export const fetchJewelryById = async (id: string) => {
-  return await axios.get(`http://localhost:8081/jewelry/${id}`);
+  return await axios.get(`${mainUrl}/${id}`);
 };
 
 export const SetJewelry = (payload: string | number = null) => ({

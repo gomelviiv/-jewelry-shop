@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Button, FigureProductCard } from '../../../components';
-import { fetchJewelry } from '../../../redux/reducers/jewelry/action';
+import { fetchJewelry } from '../../../redux/jewelry/action';
 import { useSelector, useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ISortBy } from '../../../redux/reducers/sortBy/type';
-import { IJewelryItem, IJewelry } from '../../../redux/reducers/jewelry/type';
-import { IFilters } from '../../../redux/reducers/filters/type';
-import { jewelrySelector } from '../../../redux/reducers/jewelry/selectors';
-import { filtersSelector } from '../../../redux/reducers/filters/selectors';
-import { sortBySelector } from '../../../redux/reducers/sortBy/selectors';
+import { ISortBy } from '../../../redux/sortBy/type';
+import { IJewelryItem, IJewelry } from '../../../redux/jewelry/type';
+import { IFilters } from '../../../redux/filters/type';
+import { jewelrySelector } from '../../../redux/jewelry/selectors';
+import { filtersSelector } from '../../../redux/filters/selectors';
+import { sortBySelector } from '../../../redux/sortBy/selectors';
 
 const ProductCards: React.FC = React.memo(() => {
   const dispatch: Dispatch<any> = useDispatch();

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { IJewelryField } from '../../redux/reducers/jewelry/type';
+import { IJewelryField } from '../../redux/jewelry/type';
 import Button from '../Button';
 
 interface IFigureProductCard {
@@ -16,7 +16,14 @@ interface IFigureProductCard {
   className: string;
 }
 
-const FigureProductCard: React.FC<IFigureProductCard> = ({ className, img, name, price, type }) => {
+const FigureProductCard: React.FC<IFigureProductCard> = ({
+  className,
+  img,
+  name,
+  price,
+  type,
+  id,
+}) => {
   return (
     <figure className={`figure-product-card ${className}`}>
       <img src={`./assets/img/${img}`} alt="" />
