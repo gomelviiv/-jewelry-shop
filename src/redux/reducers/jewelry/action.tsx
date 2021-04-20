@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as actionTypes from './actionType';
-
+import { IJewelryItem } from './type';
 export const fetchJewelry = (
   gender: number,
   brand: number,
@@ -24,6 +24,10 @@ export const fetchJewelry = (
     .then(({ data }) => {
       dispatch(SetJewelry(data));
     });
+};
+
+export const fetchJewelryById = async (id: string) => {
+  return await axios.get(`http://localhost:8081/jewelry/${id}`);
 };
 
 export const SetJewelry = (payload: string | number = null) => ({
