@@ -16,14 +16,7 @@ interface IFigureProductCard {
   className: string;
 }
 
-const FigureProductCard: React.FC<IFigureProductCard> = ({
-  className,
-  img,
-  name,
-  price,
-  type,
-  id,
-}) => {
+const FigureProductCard: React.FC<IFigureProductCard> = ({ className, img, name, price, type }) => {
   return (
     <figure className={`figure-product-card ${className}`}>
       <img src={`./assets/img/${img}`} alt="" />

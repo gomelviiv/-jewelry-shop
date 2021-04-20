@@ -3,9 +3,11 @@
   @include typeText($secondary-color, $main-font);
   @include typeFlex(row, none, space-between);
   margin-bottom: 100px;
+
   &__left {
     width: 45%;
     @include typeFlex(column, center, null);
+
     &-top {
       width: 100%;
       & img {
@@ -13,25 +15,30 @@
         height: auto;
       }
     }
+
     &-bottom {
       margin-top: 62px;
       width: 100%;
       @include typeFlex(row, center, space-between);
+
       & img {
         width: 29%;
       }
     }
   }
+
   &__right {
     width: 50%;
     box-sizing: border-box;
     padding: 11px;
     border: 1px solid #d6d6d6;
+
     .right-information {
       box-sizing: border-box;
       padding: 20px;
       height: 100%;
       border: 1px solid #d6d6d6;
+
       &__h2 {
         text-align: center;
         font-size: 24px;
@@ -40,6 +47,7 @@
         line-height: 28px;
         letter-spacing: 0.1em;
       }
+
       &__type {
         @include typeFlex(row, center, center);
 
@@ -51,18 +59,22 @@
           line-height: 21px;
           letter-spacing: 0em;
           color: #979797;
+
           &:first-child {
             margin-right: 30px;
           }
+
           & label {
             margin-left: 15px;
           }
         }
       }
+
       &__hr {
         margin: 30px 0;
         background: #d6d6d6;
       }
+
       &__p {
         font-size: 14px;
         font-style: normal;
@@ -71,6 +83,7 @@
         letter-spacing: 0em;
         text-align: left;
       }
+
       &__h4 {
         margin: 30px 0;
         font-size: 24px;
@@ -80,6 +93,7 @@
         letter-spacing: 0.05em;
         text-align: left;
       }
+
       &__buttons {
         width: 100%;
         @include typeFlex(row, center, justify-content);
@@ -96,6 +110,7 @@
           padding: 10px 20px;
           margin-right: 50px;
         }
+
         & button:last-child {
           text-transform: uppercase;
           @include mainStyleButton($secondary-color, 1px solid $secondary-color, none);

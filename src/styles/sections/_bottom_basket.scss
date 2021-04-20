@@ -1,0 +1,59 @@
+.basket__bottom {
+  padding-top: 20px;
+  border-top: 1px $hr-color solid;
+  margin: 50px 0;
+
+  &-details {
+    @include typeFlex(row, center, space-between);
+
+    & span {
+      font-size: 22px;
+    }
+
+    & b {
+      margin-left: 20px;
+      color: $secondary-color;
+      font-weight: 600;
+    }
+  }
+
+  &-buttons {
+    @include typeFlex(row, center, space-between);
+    margin-top: 40px;
+
+    .basket-back-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      @include mainStyleButton($secondary-color, 2px solid $button-secondary-color, none);
+      font-weight: 600;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background: $main-basket-color;
+        color: $main-color;
+        border-color: $main-basket-color;
+      }
+    }
+
+    .basket-buy {
+      font-weight: bold;
+      border-radius: 10px;
+      @include mainStyleButton($secondary-color, 2px solid $button-secondary-color, none);
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background: $main-basket-color;
+        color: $main-color;
+        border-color: $main-basket-color;
+      }
+    }
+  }
+}

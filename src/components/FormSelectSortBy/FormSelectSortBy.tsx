@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(1),
       minWidth: 120,
     },
+
     selectEmpty: {
       marginTop: theme.spacing(2),
     },
@@ -36,9 +37,11 @@ const FormSelectSortBy: React.FC<IFormSelectSortBy> = React.memo(
     const classes = useStyles();
     const sortBy: ISortBy = useSelector(sortBySelector);
 
+
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
       selectDispatchSortBy(event.target.value);
     }, []);
+
     return (
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">{sortItems.name}</InputLabel>
@@ -58,4 +61,5 @@ const FormSelectSortBy: React.FC<IFormSelectSortBy> = React.memo(
     );
   },
 );
+
 export default FormSelectSortBy;

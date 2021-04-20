@@ -8,3 +8,7 @@ export { default as SelectCategory } from './CatalogSection/SelectCategory';
 export { default as ProductCards } from './CatalogSection/ProductCards';
 
 export { default as ProductInformation } from './ProductSection/ProductInformation';
+
+export { default as HeaderBasket } from './BasketSection/HeaderBasket/';
+export { default as BodyBasket } from './BasketSection/BodyBasket/';
+export { default as BottomBasket } from './BasketSection/BottomBasket/';

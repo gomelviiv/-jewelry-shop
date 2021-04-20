@@ -19,26 +19,31 @@ const filtersReducer = (
       newState.gender = action.payload;
       return newState;
     }
+
     case actionTypes.SET_BRAND: {
       let newState = { ...state };
       newState.brand = action.payload;
       return newState;
     }
+
     case actionTypes.SET_SEASON: {
       let newState = { ...state };
       newState.season = action.payload;
       return newState;
     }
+
     case actionTypes.SET_TYPE: {
       let newState = { ...state };
       newState.type = action.payload;
       return newState;
     }
+
     case actionTypes.SET_EVENT: {
       let newState = { ...state };
       newState.event = action.payload;
       return newState;
     }
+
     default:
       return state;
   }

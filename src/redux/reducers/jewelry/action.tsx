@@ -12,6 +12,7 @@ export const fetchJewelry = (
   order: string,
 ) => (dispatch: any) => {
   dispatch(SetLoaded(false));
+
   axios
     .get(
       `http://localhost:8081/jewelry?${gender !== null ? `gender.value=${gender}` : ''}&${
@@ -33,6 +34,7 @@ export const SetJewelry = (payload: string | number = null) => ({
   type: actionTypes.SET_JEWELRY,
   payload,
 });
+
 export const SetLoaded = (payload: boolean) => ({
   type: actionTypes.SET_LOADED,
   payload,

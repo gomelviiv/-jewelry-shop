@@ -3,28 +3,29 @@ import { Button, FigureProductCard } from '../../../components';
 import { fetchJewelry } from '../../../redux/reducers/jewelry/action';
 import { useSelector, useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { AppStateType } from '../../../redux/reducers';
 import { ISortBy } from '../../../redux/reducers/sortBy/type';
-import { IJewelryItem } from '../../../redux/reducers/jewelry/type';
+import { IJewelryItem, IJewelry } from '../../../redux/reducers/jewelry/type';
 import { IFilters } from '../../../redux/reducers/filters/type';
+import { jewelrySelector } from '../../../redux/reducers/jewelry/selectors';
+import { filtersSelector } from '../../../redux/reducers/filters/selectors';
+import { sortBySelector } from '../../../redux/reducers/sortBy/selectors';
 
 const ProductCards: React.FC = React.memo(() => {
   const dispatch: Dispatch<any> = useDispatch();
 
-  const { gender, brand, season, event, type }: IFilters = useSelector(
-    (state: AppStateType) => state.filters,
-  );
-  const jewelry: Array<IJewelryItem> = useSelector((state: AppStateType) => state.jewelry.items);
-  const { sortByType, order }: ISortBy = useSelector((state: AppStateType) => state.sortBy);
+  const { gender, brand, season, event, type }: IFilters = useSelector(filtersSelector);
+  const { items }: IJewelry = useSelector(jewelrySelector);
+  const { sortByType, order }: ISortBy = useSelector(sortBySelector);
 
   React.useEffect(() => {
     dispatch(fetchJewelry(gender, brand, season, event, type, sortByType, order));
   }, [gender, brand, season, event, type, sortByType, order]);
+
   return (
     <section className="product-cards">
       <div>
-        {jewelry &&
-          jewelry.map((val: IJewelryItem, index: number) => (
+        {items &&
+          items.map((val: IJewelryItem, index: number) => (
             <FigureProductCard
               id={val.id}
               img={val.img}

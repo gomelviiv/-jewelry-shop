@@ -36,9 +36,12 @@ const Product: React.FC<Props> = ({ match }) => {
   return (
     <div className="product">
       <div className="wrapper">
+
         {item && <SimpleBreadcrumbs className="" itemName={item.name} onClick={() => {}} />}
         {item && <ProductInformation item={item} />}
 
+        <SimpleBreadcrumbs className="" onClick={() => {}} />
+        <ProductInformation />
         <AllProductDescription fullProduct={true} />
       </div>
     </div>
